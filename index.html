@@ -3,199 +3,259 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Football For Good Battle</title>
 
 <style>
-body {
-  font-family: Arial, sans-serif;
-  background:#0b132b;
-  color:white;
-  text-align:center;
-  padding:20px;
+*{
+box-sizing:border-box;
+font-family:Arial,"Sarabun",sans-serif;
 }
 
-.card {
-  max-width:500px;
-  margin:auto;
-  background:#1c2541;
-  padding:25px;
-  border-radius:20px;
+body{
+margin:0;
+background:#f7f8fa;
+color:#111;
 }
 
-.teams {
-  display:flex;
-  justify-content:space-between;
-  font-size:22px;
-  margin-bottom:20px;
+.container{
+max-width:600px;
+margin:auto;
+padding:24px;
 }
 
-.bar {
-  width:100%;
-  height:40px;
-  display:flex;
-  border-radius:20px;
-  overflow:hidden;
-  background:#333;
+.header{
+text-align:center;
+margin-bottom:30px;
 }
 
-.left {
-  background:#009b3a;
+.header h1{
+font-size:28px;
+margin-bottom:8px;
 }
 
-.right {
-  background:#ce1126;
+.header p{
+color:#666;
 }
 
-button {
-  padding:12px 20px;
-  margin:10px;
-  border:none;
-  border-radius:20px;
-  cursor:pointer;
-  font-size:16px;
+
+.match-card{
+background:white;
+border-radius:24px;
+padding:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-.countdown {
-  font-size:25px;
-  color:#ffd166;
+
+.teams{
+display:flex;
+justify-content:space-between;
+align-items:center;
+text-align:center;
 }
 
-.money {
-  display:flex;
-  justify-content:space-around;
-  margin-top:20px;
+.team{
+width:40%;
 }
+
+.flag{
+font-size:50px;
+}
+
+.team h2{
+font-size:20px;
+}
+
+
+.vs{
+font-weight:bold;
+color:#999;
+}
+
+
+.countdown{
+background:#111;
+color:white;
+padding:14px;
+border-radius:15px;
+text-align:center;
+margin:25px 0;
+}
+
+
+.battle-title{
+text-align:center;
+font-weight:bold;
+margin-bottom:12px;
+}
+
+
+.bar{
+height:35px;
+background:#eee;
+border-radius:30px;
+overflow:hidden;
+display:flex;
+}
+
+.left{
+width:50%;
+background:#1d4ed8;
+}
+
+.right{
+width:50%;
+background:#ef4444;
+}
+
+
+.money{
+display:flex;
+justify-content:space-between;
+margin-top:15px;
+font-size:18px;
+}
+
+
+.buttons{
+display:flex;
+gap:10px;
+margin-top:25px;
+}
+
+
+button{
+flex:1;
+border:none;
+padding:14px;
+border-radius:15px;
+font-size:15px;
+cursor:pointer;
+background:#111;
+color:white;
+}
+
+
+.info{
+margin-top:25px;
+background:#f1f5f9;
+padding:18px;
+border-radius:18px;
+font-size:14px;
+color:#555;
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<div class="card">
+<div class="container">
 
-<h1>⚽ Football For Good Battle</h1>
 
-<h2>เชียร์ทีมรัก เปลี่ยนอนาคต </h2>
-
-<div class="countdown" id="timer">
-กำลังโหลด...
+<div class="header">
+<h1>⚽ Football For Good</h1>
+<p>เชียร์ทีมโปรด เปลี่ยนพลังแฟนบอลเป็นโอกาสทางการศึกษา</p>
 </div>
 
-<hr>
+
+<div class="match-card">
+
 
 <div class="teams">
-<div>🇦🇷 Argentina</div>
-<div>🇪🇸 Spain</div>
+
+<div class="team">
+<div class="flag">🇦🇷</div>
+<h2>Argentina</h2>
+</div>
+
+
+<div class="vs">
+VS
+</div>
+
+
+<div class="team">
+<div class="flag">🇪🇸</div>
+<h2>Spain</h2>
+</div>
+
+</div>
+
+
+
+<div class="countdown">
+⏳ เริ่มแข่งใน 02 วัน 05 ชั่วโมง
+</div>
+
+
+<div class="battle-title">
+❤️ Fan Battle
 </div>
 
 
 <div class="bar">
-<div class="left" id="team1"></div>
-<div class="right" id="team2"></div>
+<div class="left"></div>
+<div class="right"></div>
 </div>
 
 
 <div class="money">
+
 <div>
 🇦🇷<br>
-<span id="money1">20000</span> บาท
+0 บาท
 </div>
 
-<div>
+
+<div style="text-align:right">
 🇪🇸<br>
-<span id="money2">30000</span> บาท
+0 บาท
 </div>
+
 </div>
 
 
-<button onclick="goTeam1()">
-❤️ทีม Argentina
+
+<div class="buttons">
+
+<button onclick="team1()">
+เชียร์ Argentina
 </button>
 
-<button onclick="goTeam2()">
-❤️ทีม Spain
+<button onclick="team2()">
+เชียร์ Spain
 </button>
 
+</div>
+
+
+<div class="info">
+เงินสนับสนุนทั้งหมดส่งผ่านแพลตฟอร์มเทใจโดยตรง
+เว็บไซต์นี้เป็นพื้นที่รวมพลังแฟนบอล
+</div>
+
+
+</div>
 
 </div>
 
 
 <script>
 
-let money1 = ;
-let money2 = ;
-
-  function goTeam1(){
-window.open("ลิงก์เทใจทีม A","https://taejai.com/th/project/dst-venezuela/?utm_source=taejai&utm_medium=project-share&utm_campaign=dst-venezuela");
-}
-
-function goTeam2(){
-window.open("ลิงก์เทใจทีม B","https://taejai.com/th/project/chd-dream-musical-car/?utm_source=taejai&utm_medium=project-share&utm_campaign=chd-dream-musical-car");
+function team1(){
+window.open("ใส่ลิงก์เทใจทีม Argentina","_https://taejai.com/th/project/chd-dream-musical-car");
 }
 
 
-// Battle Bar
-
-function updateBar(){
-
-let total = money1 + money2;
-
-let percent1 = (money1/total)*100;
-
-document.getElementById("team1").style.width =
-percent1+"%";
-
-document.getElementById("team2").style.width =
-(100-percent1)+"%";
-
+function team2(){
+window.open("ใส่ลิงก์เทใจทีม Spain","_https://taejai.com/th/project/chd-Hiring-administrative-staff-to-return-teachers-to-the-classroom/?utm_source=taejai&utm_medium=project-share&utm_campaign=chd-Hiring-administrative-staff-to-return-teachers-to-the-classroom");
 }
-
-updateBar();
-
-
-// ใส่ลิงก์เทใจตรงนี้
-
-function goTeam1(){
-window.open(
-"https://www.taejai.com/",
-"_blank"
-);
-}
-
-function goTeam2(){
-window.open(
-"https://www.taejai.com/",
-"_blank"
-);
-}
-
-
-// Countdown
-
-let matchDate =
-new Date("July 19, 2026 22:00:00").getTime();
-
-
-setInterval(()=>{
-
-let now = new Date().getTime();
-
-let distance = matchDate-now;
-
-
-let d=Math.floor(distance/(1000*60*60*24));
-let h=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-let m=Math.floor((distance%(1000*60*60))/(1000*60));
-let s=Math.floor((distance%(1000*60))/1000);
-
-
-document.getElementById("timer").innerHTML =
-"⏳ เหลือ "+d+" วัน "+h+" ชม. "+m+" นาที "+s+" วิ";
-
-
-},1000);
-
 
 </script>
+
 
 </body>
 </html>
