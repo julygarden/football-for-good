@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Football For Good Battle</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background:#0b132b;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+.card {
+  max-width:500px;
+  margin:auto;
+  background:#1c2541;
+  padding:25px;
+  border-radius:20px;
+}
+
+.teams {
+  display:flex;
+  justify-content:space-between;
+  font-size:22px;
+  margin-bottom:20px;
+}
+
+.bar {
+  width:100%;
+  height:40px;
+  display:flex;
+  border-radius:20px;
+  overflow:hidden;
+  background:#333;
+}
+
+.left {
+  background:#009b3a;
+}
+
+.right {
+  background:#ce1126;
+}
+
+button {
+  padding:12px 20px;
+  margin:10px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.countdown {
+  font-size:25px;
+  color:#ffd166;
+}
+
+.money {
+  display:flex;
+  justify-content:space-around;
+  margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>⚽ Football For Good Battle</h1>
+
+<h2>เชียร์ทีมรัก เปลี่ยนอนาคต ❤️</h2>
+
+<div class="countdown" id="timer">
+กำลังโหลด...
+</div>
+
+<hr>
+
+<div class="teams">
+<div>🇦🇷 Argentina</div>
+<div>🇪🇸 Spain</div>
+</div>
+
+
+<div class="bar">
+<div class="left" id="team1"></div>
+<div class="right" id="team2"></div>
+</div>
+
+
+<div class="money">
+<div>
+🇦🇷<br>
+<span id="money1">20000</span> บาท
+</div>
+
+<div>
+🇪🇸<br>
+<span id="money2">30000</span> บาท
+</div>
+</div>
+
+
+<button onclick="goTeam1()">
+❤️ เชียร์ Argentina
+</button>
+
+<button onclick="goTeam2()">
+❤️ เชียร์ Spain
+</button>
+
+
+</div>
+
+
+<script>
+
+let money1 = 20000;
+let money2 = 30000;
+
+
+// Battle Bar
+
+function updateBar(){
+
+let total = money1 + money2;
+
+let percent1 = (money1/total)*100;
+
+document.getElementById("team1").style.width =
+percent1+"%";
+
+document.getElementById("team2").style.width =
+(100-percent1)+"%";
+
+}
+
+updateBar();
+
+
+// ใส่ลิงก์เทใจตรงนี้
+
+function goTeam1(){
+window.open(
+"https://www.taejai.com/",
+"_blank"
+);
+}
+
+function goTeam2(){
+window.open(
+"https://www.taejai.com/",
+"_blank"
+);
+}
+
+
+// Countdown
+
+let matchDate =
+new Date("July 19, 2026 22:00:00").getTime();
+
+
+setInterval(()=>{
+
+let now = new Date().getTime();
+
+let distance = matchDate-now;
+
+
+let d=Math.floor(distance/(1000*60*60*24));
+let h=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+let m=Math.floor((distance%(1000*60*60))/(1000*60));
+let s=Math.floor((distance%(1000*60))/1000);
+
+
+document.getElementById("timer").innerHTML =
+"⏳ เหลือ "+d+" วัน "+h+" ชม. "+m+" นาที "+s+" วิ";
+
+
+},1000);
+
+
+</script>
+
+</body>
+</html>
